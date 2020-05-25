@@ -32,18 +32,7 @@
           transformAngle:(float)angle
                    width:(CGFloat)width;
 
-- (void)resetWindowAdFrameWith:(CGFloat)x
-                             y:(CGFloat)y
-                transformAngle:(float)angle
-                         width:(CGFloat)width;
-
 - (void)hiddenWindowAd;
-
-- (void)showAgainAfterHiding;
-
-- (void)pauseVideo;
-
-- (void)resumeVideo;
 
 - (void)destroyWindowAd;
 

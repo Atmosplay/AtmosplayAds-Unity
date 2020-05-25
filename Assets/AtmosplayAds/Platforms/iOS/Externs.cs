@@ -174,9 +174,6 @@ namespace AtmosplayAds.iOS
         
         [DllImport("__Internal")]
         internal static extern void showWindowAd(IntPtr windowAd, int x, int y, int angle, int width);
-
-        [DllImport("__Internal")]
-        internal static extern void updateWindowAdPosition(IntPtr windowAd, int x, int y, int angle, int width);
         
         [DllImport("__Internal")]
         internal static extern void setWindowAdChannelId(IntPtr windowAd, string channelId);
@@ -185,16 +182,7 @@ namespace AtmosplayAds.iOS
         internal static extern void hiddenWindowAd(IntPtr windowAd);
 
         [DllImport("__Internal")]
-        internal static extern void showWindowAdAgainAfterHiding(IntPtr windowAd);
-
-        [DllImport("__Internal")]
         internal static extern void destroyWindowAd(IntPtr windowAd);
-
-        [DllImport("__Internal")]
-        internal static extern void pauseVideo(IntPtr windowAd);
-
-        [DllImport("__Internal")]
-        internal static extern void resumeVideo(IntPtr windowAd);
         #endregion
     }
 }

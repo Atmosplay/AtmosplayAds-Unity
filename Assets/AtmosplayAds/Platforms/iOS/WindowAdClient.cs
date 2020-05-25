@@ -87,14 +87,21 @@ namespace AtmosplayAds.iOS
             return Externs.windowAdIsReady(windowAdPtr);
         }
 
-        public void Show()
-        {
-            Externs.showWindowAd(windowAdPtr ,x, y, angle, width);
-        }
-
-        public void SetAngle(int windowAdAngle) 
+        public void Show(Transform windowAdRect, int windowAdAngle)
         {
             angle = windowAdAngle;
+
+            if (windowAdRect != null)
+            {
+                Camera camera = Camera.main;
+                Rect windowAdRectTransform = getGameObjectRect(windowAdRect as RectTransform, camera);
+
+                x = (int)windowAdRectTransform.x;
+                y = (int)windowAdRectTransform.y;
+                width = (int)windowAdRectTransform.width;
+            }
+
+            Externs.showWindowAd(windowAdPtr ,x, y, angle, width);
         }
 
         public void SetChannelId(string channelId)
@@ -102,57 +109,14 @@ namespace AtmosplayAds.iOS
             Externs.setWindowAdChannelId(windowAdPtr, channelId);
         }
 
-        public void SetPointAndWidth(Transform windowAdRect)
-        {
-            if (windowAdRect != null)
-            {
-                Camera camera = Camera.main;
-                Rect windowAdRectTransform = getGameObjectRect(windowAdRect as RectTransform, camera);
-
-                x = (int)windowAdRectTransform.x;
-                y = (int)windowAdRectTransform.y;
-                width = (int)windowAdRectTransform.width;
-            }
-        }
- 
-        public void UpdatePointAndWidth(Transform windowAdRect) 
-        {
-            if (windowAdRect != null)
-            {
-                Camera camera = Camera.main;
-                Rect windowAdRectTransform = getGameObjectRect(windowAdRect as RectTransform, camera);
-
-                x = (int)windowAdRectTransform.x;
-                y = (int)windowAdRectTransform.y;
-                width = (int)windowAdRectTransform.width;
-            }
-
-            Externs.updateWindowAdPosition(windowAdPtr , x, y, angle, width);
-        }
-
         public void Hidden()
         {
             Externs.hiddenWindowAd(windowAdPtr);
         }
 
-        public void ShowAgainAfterHiding()
-        {
-            Externs.showWindowAdAgainAfterHiding(windowAdPtr);
-        }
-
         public void Destroy()
         {
             Externs.destroyWindowAd(windowAdPtr);
-        }
-
-        public void PauseVideo()
-        {
-            Externs.pauseVideo(windowAdPtr);
-        }
-
-        public void ResumeVideo()
-        {
-            Externs.resumeVideo(windowAdPtr);
         }
 
         private Rect getGameObjectRect(RectTransform rectTransform, Camera camera)

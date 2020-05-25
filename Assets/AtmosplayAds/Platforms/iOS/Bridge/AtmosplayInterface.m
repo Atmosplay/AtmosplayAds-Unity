@@ -289,11 +289,6 @@ void showWindowAd(AtmosplayTypeWindowAdRef windowAd, int x, int y, int angle, in
     [internalWindowAd showWindowAdWith:x y:y transformAngle:angle width:width];
 }
 
-void updateWindowAdPosition(AtmosplayTypeWindowAdRef windowAd, int x, int y, int angle, int width) {
-AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
-    [internalWindowAd resetWindowAdFrameWith:x y:y transformAngle:angle width:width];
-}
-
 void setWindowAdChannelId(AtmosplayTypeWindowAdRef windowAd, const char *channelId) {
     AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
     [internalWindowAd setChannelID:AtmosplayAdsStringFromUTF8String(channelId)];
@@ -304,24 +299,9 @@ void hiddenWindowAd(AtmosplayTypeWindowAdRef windowAd) {
     [internalWindowAd hiddenWindowAd];
 }
 
-void showWindowAdAgainAfterHiding(AtmosplayTypeWindowAdRef windowAd) {
-    AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
-    [internalWindowAd showAgainAfterHiding];
-}
-
 void destroyWindowAd(AtmosplayTypeWindowAdRef windowAd) {
     AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
     [internalWindowAd destroyWindowAd];
-}
-
-void pauseVideo(AtmosplayTypeWindowAdRef windowAd) {
-    AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
-    [internalWindowAd pauseVideo];
-}
-
-void resumeVideo(AtmosplayTypeWindowAdRef windowAd) {
-    AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
-    [internalWindowAd resumeVideo];
 }
 
 #pragma mark - Other methods
