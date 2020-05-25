@@ -36,30 +36,8 @@ static CGFloat iPhonePlusHeight = 736.0;
   }
 }
 
-- (void)resetWindowAdFrameWith:(CGFloat)x
-                             y:(CGFloat)y
-                transformAngle:(float)angle
-                         width:(CGFloat)width {
-  x = x/self.scale;
-  y = y/self.scale;
-  width = width/self.scale;
-  [self.windowAd resetWindowAdFrameWith:CGPointMake(x, y) width:width transfromAngle:angle rootViewController:UnityGetGLViewController()];
-}
-
-- (void)pauseVideo {
-  [self.windowAd pauseVideo];
-}
-
-- (void)resumeVideo {
-  [self.windowAd resumeVideo];
-}
-
 - (void)hiddenWindowAd {
   [self.windowAd hiddenWindowAd];
-}
-
-- (void)showAgainAfterHiding {
-  [self.windowAd showAgainAfterHiding];
 }
 
 - (void)destroyWindowAd {

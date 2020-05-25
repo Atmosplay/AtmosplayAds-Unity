@@ -114,45 +114,15 @@ namespace AtmosplayAds.iOS
                 width = (int)windowAdRectTransform.width;
             }
         }
- 
-        public void UpdatePointAndWidth(Transform windowAdRect) 
-        {
-            if (windowAdRect != null)
-            {
-                Camera camera = Camera.main;
-                Rect windowAdRectTransform = getGameObjectRect(windowAdRect as RectTransform, camera);
-
-                x = (int)windowAdRectTransform.x;
-                y = (int)windowAdRectTransform.y;
-                width = (int)windowAdRectTransform.width;
-            }
-
-            Externs.updateWindowAdPosition(windowAdPtr , x, y, angle, width);
-        }
 
         public void Hidden()
         {
             Externs.hiddenWindowAd(windowAdPtr);
         }
 
-        public void ShowAgainAfterHiding()
-        {
-            Externs.showWindowAdAgainAfterHiding(windowAdPtr);
-        }
-
         public void Destroy()
         {
             Externs.destroyWindowAd(windowAdPtr);
-        }
-
-        public void PauseVideo()
-        {
-            Externs.pauseVideo(windowAdPtr);
-        }
-
-        public void ResumeVideo()
-        {
-            Externs.resumeVideo(windowAdPtr);
         }
 
         private Rect getGameObjectRect(RectTransform rectTransform, Camera camera)
