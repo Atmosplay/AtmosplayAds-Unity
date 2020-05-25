@@ -100,27 +100,15 @@ namespace AtmosplayAds.Api
         }
 
         // Shows the window ad
-        public void Show()
+        public void Show(Transform windowAdRect, int angle)
         {
-            client.Show();
+            client.Show(windowAdRect, angle);
         }
 
         [Obsolete("SetChannelId is deprecated, please use AdOptions instead.", true)]
         public void SetChannelId(string channelId)
         {
             client.SetChannelId(channelId);
-        }
-
-        // Please set the position of the coordinate point where window ad is displayed
-        public void SetPointAndWidth(Transform floatAdRect)
-        {
-            client.SetPointAndWidth(floatAdRect);
-        }
-
-        // Update the position of the coordinate point where window ad is displayed
-        public void UpdatePointAndWidth(Transform floatAdRect)
-        {
-            client.UpdatePointAndWidth(floatAdRect);
         }
 
         // Hidden window ad view
@@ -130,21 +118,10 @@ namespace AtmosplayAds.Api
 
         }
 
-        // Show again after hiding window ad view
-        public void ShowAgainAfterHiding()
-        {
-            client.ShowAgainAfterHiding();
-        }
-
         // Destroy window ad
         public void Destroy()
         {
             client.Destroy();
-        }
-
-        public void SetAngle(int angle)
-        {
-            client.SetAngle(angle);
         }
 
         [Obsolete("OnAdVideoCompleted no more supported.", true)]
