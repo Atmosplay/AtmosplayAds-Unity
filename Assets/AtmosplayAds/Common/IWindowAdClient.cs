@@ -17,19 +17,11 @@ namespace AtmosplayAds.Common
 
         bool IsReady();
 
-        void Show();
+        void Show(Transform windowAdRect, int windowAdAngle);
 
         void SetChannelId(string channelId);
 
-        void SetAngle(int windowAdAngle);
-
-        void SetPointAndWidth(Transform windowAdRect);
-
-        void UpdatePointAndWidth(Transform windowAdRect);
-
         void Hidden();
-
-        void ShowAgainAfterHiding();
 
         void Destroy();
     }
