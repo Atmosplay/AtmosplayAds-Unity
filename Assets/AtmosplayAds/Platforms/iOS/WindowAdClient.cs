@@ -87,23 +87,10 @@ namespace AtmosplayAds.iOS
             return Externs.windowAdIsReady(windowAdPtr);
         }
 
-        public void Show()
-        {
-            Externs.showWindowAd(windowAdPtr ,x, y, angle, width);
-        }
-
-        public void SetAngle(int windowAdAngle) 
+        public void Show(Transform windowAdRect, int windowAdAngle)
         {
             angle = windowAdAngle;
-        }
 
-        public void SetChannelId(string channelId)
-        {
-            Externs.setWindowAdChannelId(windowAdPtr, channelId);
-        }
-
-        public void SetPointAndWidth(Transform windowAdRect)
-        {
             if (windowAdRect != null)
             {
                 Camera camera = Camera.main;
@@ -113,6 +100,13 @@ namespace AtmosplayAds.iOS
                 y = (int)windowAdRectTransform.y;
                 width = (int)windowAdRectTransform.width;
             }
+
+            Externs.showWindowAd(windowAdPtr ,x, y, angle, width);
+        }
+
+        public void SetChannelId(string channelId)
+        {
+            Externs.setWindowAdChannelId(windowAdPtr, channelId);
         }
 
         public void Hidden()
