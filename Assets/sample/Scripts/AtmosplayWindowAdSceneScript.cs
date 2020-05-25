@@ -37,25 +37,13 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
     public void showWindowAd()
     {
         statusText.text = "showWindowAd";
-        if (windowAd != null)
-        {
-            windowAd.SetPointAndWidth(windowAdView.transform);
-            windowAd.Show();
-        }
-    }
-
-    public void setAngle()
-    {
-        int a = 0;
+        // angle
+        int angleNumber = 0;
         if (angle.text != null)
         {
-            a = int.Parse(angle.text);
-            windowAd.SetAngle(a);
+            angleNumber = int.Parse(angle.text);
         }
-    }
-
-    public void setPositionAndWidth()
-    {
+        // x, y, width
         float x = 0;
         float y = 0;
         float w = 0;
@@ -76,14 +64,10 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
 
         windowAdView.transform.position = new Vector3(x, y, 200);
         windowAdView.GetComponent<RectTransform>().sizeDelta = new Vector2(w, w);
-    }
 
-    public void UpdatePointAndWidth()
-    {
         if (windowAd != null)
         {
-            setPositionAndWidth();
-            windowAd.UpdatePointAndWidth(windowAdView.transform);
+            windowAd.Show(windowAdView.transform, angleNumber);
         }
     }
 
@@ -102,15 +86,6 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
         if (windowAd != null)
         {
             windowAd.Hidden();
-        }
-    }
-
-    public void ShowAgainAfterHiding()
-    {
-        statusText.text = "ShowAgainAfterHiding";
-        if (windowAd != null)
-        {
-            windowAd.ShowAgainAfterHiding();
         }
     }
 
