@@ -37,34 +37,17 @@ namespace AtmosplayAds.Android
             return androidWindowAd.Call<bool>("isLoaded");
         }
 
-        public void Show()
-        {
-            androidWindowAd.Call("show");
-        }
-
-        public void SetChannelId(string channelId){
-            androidWindowAd.Call("setChannelId", channelId);
-        }
-
-       
-        public void SetPointAndWidth(Transform windowAdRectTransform)
-        {
-            if (windowAdRectTransform != null)
-            {
-
-                Camera camera = Camera.main;
-                Rect windowAdRect = getGameObjectRect(windowAdRectTransform as RectTransform, camera);
-
-                androidWindowAd.Call("setPointAndWidth", (int)windowAdRect.x, (int)windowAdRect.y, (int)windowAdRect.width);
-            }
-        }
-
-        public void UpdatePointAndWidth(Transform windowAdRectTransform)
+        public void Show(Transform windowAdRectTransform, int windowAdAngle)
         {
             Camera camera = Camera.main;
             Rect windowAdRect = getGameObjectRect(windowAdRectTransform as RectTransform, camera);
+          
+            androidWindowAd.Call("show", (int)windowAdRect.x, (int)windowAdRect.y, (int)windowAdRect.width);
+        }
 
-            androidWindowAd.Call("updatePointAndWidth", (int)windowAdRect.x, (int)windowAdRect.y, (int)windowAdRect.width);
+    
+        public void SetChannelId(string channelId){
+            androidWindowAd.Call("setChannelId", channelId);
         }
 
         public void Hidden()
@@ -72,15 +55,6 @@ namespace AtmosplayAds.Android
             androidWindowAd.Call("hidden");
         }
 
-        public void ShowAgainAfterHiding()
-        {
-            androidWindowAd.Call("showAgainAfterHiding");
-        }
-
-        public void SetAngle(int windowAdAngle)
-        {
-
-        }
 
         public void Destroy()
         {
@@ -184,7 +158,7 @@ namespace AtmosplayAds.Android
             }
         }
 
-#endregion
+        #endregion
     }
 }
 
