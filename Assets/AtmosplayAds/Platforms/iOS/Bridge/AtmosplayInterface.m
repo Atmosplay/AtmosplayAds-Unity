@@ -299,6 +299,11 @@ void closeWindowAd(AtmosplayTypeWindowAdRef windowAd) {
     [internalWindowAd closeWindowAd];
 }
 
+void destroyWindowAd(AtmosplayTypeWindowAdRef windowAd) {
+    AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
+    [internalWindowAd destroy];
+}
+
 #pragma mark - Other methods
 /// Removes an object from the cache.
 void AtmosplayAdsRelease(AtmosplayTypeRef ref) {

@@ -180,6 +180,10 @@ namespace AtmosplayAds.iOS
 
         [DllImport("__Internal")]
         internal static extern void closeWindowAd(IntPtr windowAd);
+
+        [DllImport("__Internal")]
+        internal static extern void destroyWindowAd(IntPtr windowAd);
+        
         #endregion
     }
 }
