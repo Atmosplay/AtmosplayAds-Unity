@@ -163,13 +163,13 @@ public class WindowAd {
     }
 
 
-    public void hidden() {
+    public void close() {
         Log.d(TAG, "hidden");
         mActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (mWindowAd != null) {
-                    mWindowAd.hiddenWindowAd();
+                    mWindowAd.closeWindowAd();
                 }
             }
         });
