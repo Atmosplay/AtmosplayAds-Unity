@@ -109,14 +109,9 @@ namespace AtmosplayAds.iOS
             Externs.setWindowAdChannelId(windowAdPtr, channelId);
         }
 
-        public void Hidden()
+        public void Close()
         {
-            Externs.hiddenWindowAd(windowAdPtr);
-        }
-
-        public void Destroy()
-        {
-            Externs.destroyWindowAd(windowAdPtr);
+            Externs.closeWindowAd(windowAdPtr);
         }
 
         private Rect getGameObjectRect(RectTransform rectTransform, Camera camera)

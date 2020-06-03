@@ -82,21 +82,16 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
         }
     }
 
-    public void hidden()
+    public void Close()
     {
-        statusText.text = "hidden";
         if (windowAd != null)
         {
-            windowAd.Hidden();
+            windowAd.Close();
         }
     }
 
-    public void Destroy()
+    public void DismissScene()
     {
-        if (windowAd != null)
-        {
-            windowAd.Destroy();
-        }
         SceneManager.LoadScene("MainScene");
     }
 

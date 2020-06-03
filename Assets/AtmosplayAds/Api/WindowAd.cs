@@ -111,17 +111,10 @@ namespace AtmosplayAds.Api
             client.SetChannelId(channelId);
         }
 
-        // Hidden window ad view
-        public void Hidden()
-        {
-            client.Hidden();
-
-        }
-
         // Destroy window ad
-        public void Destroy()
+        public void Close()
         {
-            client.Destroy();
+            client.Close();
         }
 
         [Obsolete("OnAdVideoCompleted no more supported.", true)]

@@ -21,8 +21,6 @@ namespace AtmosplayAds.Common
 
         void SetChannelId(string channelId);
 
-        void Hidden();
-
-        void Destroy();
+        void Close();
     }
 }
