@@ -34,6 +34,8 @@
 
 - (void)closeWindowAd;
 
+- (void)destroy;
+
 - (void)setChannelID:(NSString *)channelID;
 
 - (BOOL)isReady;

@@ -114,6 +114,11 @@ namespace AtmosplayAds.iOS
             Externs.closeWindowAd(windowAdPtr);
         }
 
+        public void Destroy()
+        {
+            Externs.destroyWindowAd(windowAdPtr);
+        }
+
         private Rect getGameObjectRect(RectTransform rectTransform, Camera camera)
         {
             if (rectTransform == null)
