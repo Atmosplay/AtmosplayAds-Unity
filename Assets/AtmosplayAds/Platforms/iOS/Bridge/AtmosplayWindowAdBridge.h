@@ -32,9 +32,7 @@
           transformAngle:(float)angle
                    width:(CGFloat)width;
 
-- (void)hiddenWindowAd;
-
-- (void)destroyWindowAd;
+- (void)closeWindowAd;
 
 - (void)setChannelID:(NSString *)channelID;
 
