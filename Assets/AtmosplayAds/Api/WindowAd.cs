@@ -117,6 +117,11 @@ namespace AtmosplayAds.Api
             client.Close();
         }
 
+        public void Destroy()
+        {
+            client.Destroy();
+        }
+
         [Obsolete("OnAdVideoCompleted no more supported.", true)]
         public event EventHandler<EventArgs> OnAdVideoCompleted;
     }
