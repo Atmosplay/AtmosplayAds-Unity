@@ -61,6 +61,7 @@ public class Banner {
                             @Override
                             public void run() {
                                 adListener.onAdLoaded();
+                                showBannerView();
                             }
                         }).start();
                     }
