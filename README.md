@@ -570,9 +570,7 @@ public void HandleWindowAdClosed(object sender, EventArgs args)
 {
     print("atmosplay---HandleWindowAdClosed");
 }
-// 注意： 
-// 如接受到展示失败回调，请先调用`Destroy`方法，再重新初始化窗口广告对象
-// 等广告加载成功之后，在合适的时机进行展示。
+
 public void HandleWindowAdFailToShow(object sender, EventArgs args)
 {
     print("atmosplay---HandleWindowAdFailToShow");
