@@ -50,11 +50,10 @@ namespace AtmosplayAds.Android
             androidWindowAd.Call("setChannelId", channelId);
         }
 
-        public void Hidden()
+        public void Close()
         {
-            androidWindowAd.Call("hidden");
+            androidWindowAd.Call("close");
         }
-
 
         public void Destroy()
         {
