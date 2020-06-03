@@ -36,14 +36,8 @@ static CGFloat iPhonePlusHeight = 736.0;
   }
 }
 
-- (void)hiddenWindowAd {
-  [self.windowAd hiddenWindowAd];
-}
-
 - (void)destroyWindowAd {
-  [self.windowAd destroyWindowAd];
-  self.windowAd.delegate = nil;
-  self.windowAd = nil;
+  [self.windowAd closeWindowAd];
 }
 
 - (void)setChannelID:(NSString *)channelID {
