@@ -95,6 +95,7 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
         if (windowAd != null)
         {
             windowAd.Close();
+            windowAd.Destroy();
         }
         SceneManager.LoadScene("MainScene");
     }
