@@ -90,11 +90,14 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
         }
     }
 
-    public void DismissScene()
+    public void Back()
     {
+        if (windowAd != null)
+        {
+            windowAd.Close();
+        }
         SceneManager.LoadScene("MainScene");
     }
-
 
     #region WindowAd callback handlers
     public void HandleWindowAdLoaded(object sender, EventArgs args)
