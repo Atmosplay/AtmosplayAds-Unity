@@ -1,6 +1,6 @@
 ﻿<dependencies>
   <androidPackages>
-    <androidPackage spec="com.atmosplayads:atmosplayads:3.1.0">
+    <androidPackage spec="com.atmosplayads:atmosplayads:3.2.1">
       <repositories>
         <repository>https://jcenter.bintray.com/</repository>
       </repositories>
@@ -8,10 +8,7 @@
   </androidPackages>
 
   <iosPods>
-    <iosPod name="AtmosplayAds" version="~> 3.2.0">
-    <sources>
-        <source>https://github.com/yumimobi/Specs.git</source>
-    </sources>
+    <iosPod name="AtmosplayAds" version="~> 3.2.1">
     </iosPod>
   </iosPods>
 </dependencies>

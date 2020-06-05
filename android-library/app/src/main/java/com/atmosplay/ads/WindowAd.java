@@ -60,27 +60,14 @@ public class WindowAd {
     }
 
 
-    public void setPointAndWidth(final int mPointX, final int mPointY, final int width) {
-        Log.d(TAG, "setPointAndWidth mPointX: " + mPointX + ", mPointY: " + mPointY + ", width: " + width);
-        mActivity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (mWindowAd != null) {
-                    mWindowAd.setPointAndWidth(mPointX, mPointY, width);
-                }
-            }
-        });
-    }
-
-
-    public void show() {
+    public void show(final int mPointX, final int mPointY, final int width) {
         Log.d(TAG, "show ");
         mActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (mWindowAd != null) {
                     if (mWindowAd.isReady()) {
-                        mWindowAd.show(mActivity);
+                        mWindowAd.show(mActivity, mPointX, mPointY, width);
                     }
                 }
             }
@@ -175,37 +162,14 @@ public class WindowAd {
         };
     }
 
-    public void updatePointAndWidth(final int mPointX, final int mPointY, final int width) {
-        Log.d(TAG, "updatePointAndWidth mPointX: " + mPointX + ", mPointY: " + mPointY + ", width: " + width);
-        mActivity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (mWindowAd != null) {
-                    mWindowAd.updatePointAndWidth(mActivity, mPointX, mPointY, width);
-                }
-            }
-        });
-    }
 
-    public void hidden() {
+    public void close() {
         Log.d(TAG, "hidden");
         mActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (mWindowAd != null) {
-                    mWindowAd.hiddenWindowAd();
-                }
-            }
-        });
-    }
-
-    public void showAgainAfterHiding() {
-        Log.d(TAG, "showAgainAfterHiding");
-        mActivity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (mWindowAd != null) {
-                    mWindowAd.showAgainAfterHiding();
+                    mWindowAd.closeWindowAd();
                 }
             }
         });

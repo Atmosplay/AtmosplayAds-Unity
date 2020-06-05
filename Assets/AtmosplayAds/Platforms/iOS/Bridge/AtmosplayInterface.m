@@ -294,14 +294,14 @@ void setWindowAdChannelId(AtmosplayTypeWindowAdRef windowAd, const char *channel
     [internalWindowAd setChannelID:AtmosplayAdsStringFromUTF8String(channelId)];
 }
 
-void hiddenWindowAd(AtmosplayTypeWindowAdRef windowAd) {
+void closeWindowAd(AtmosplayTypeWindowAdRef windowAd) {
     AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
-    [internalWindowAd hiddenWindowAd];
+    [internalWindowAd closeWindowAd];
 }
 
 void destroyWindowAd(AtmosplayTypeWindowAdRef windowAd) {
     AtmosplayWindowAdBridge *internalWindowAd = (__bridge AtmosplayWindowAdBridge *)windowAd;
-    [internalWindowAd destroyWindowAd];
+    [internalWindowAd destroy];
 }
 
 #pragma mark - Other methods

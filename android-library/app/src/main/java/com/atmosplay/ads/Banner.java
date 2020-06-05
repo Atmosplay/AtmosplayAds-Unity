@@ -32,6 +32,7 @@ public class Banner {
     private AtmosplayBanner mBanner;
     private View mBannerView;
     private int mPosition = Gravity.BOTTOM;
+    private boolean hasHide = false;
 
     public Banner(Activity activity, UnityBannerAdListener adListener) {
         this.activity = activity;
@@ -61,6 +62,9 @@ public class Banner {
                             @Override
                             public void run() {
                                 adListener.onAdLoaded();
+                                if (!hasHide) {
+                                    showBannerView();
+                                }
                             }
                         }).start();
                     }
@@ -131,7 +135,7 @@ public class Banner {
                 if (mBannerView == null) {
                     return;
                 }
-
+                hasHide = false;
                 if (mBannerView.getParent() instanceof ViewGroup) {
                     mBannerView.setVisibility(View.VISIBLE);
                     return;
@@ -151,6 +155,7 @@ public class Banner {
                 if (mBannerView == null) {
                     return;
                 }
+                hasHide = true;
                 mBannerView.setVisibility(View.GONE);
             }
         });

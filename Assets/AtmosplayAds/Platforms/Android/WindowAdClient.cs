@@ -37,49 +37,22 @@ namespace AtmosplayAds.Android
             return androidWindowAd.Call<bool>("isLoaded");
         }
 
-        public void Show()
+        public void Show(Transform windowAdRectTransform, int windowAdAngle)
         {
-            androidWindowAd.Call("show");
+            Camera camera = Camera.main;
+            Rect windowAdRect = getGameObjectRect(windowAdRectTransform as RectTransform, camera);
+          
+            androidWindowAd.Call("show", (int)windowAdRect.x, (int)windowAdRect.y, (int)windowAdRect.width);
         }
 
+    
         public void SetChannelId(string channelId){
             androidWindowAd.Call("setChannelId", channelId);
         }
 
-       
-        public void SetPointAndWidth(Transform windowAdRectTransform)
+        public void Close()
         {
-            if (windowAdRectTransform != null)
-            {
-
-                Camera camera = Camera.main;
-                Rect windowAdRect = getGameObjectRect(windowAdRectTransform as RectTransform, camera);
-
-                androidWindowAd.Call("setPointAndWidth", (int)windowAdRect.x, (int)windowAdRect.y, (int)windowAdRect.width);
-            }
-        }
-
-        public void UpdatePointAndWidth(Transform windowAdRectTransform)
-        {
-            Camera camera = Camera.main;
-            Rect windowAdRect = getGameObjectRect(windowAdRectTransform as RectTransform, camera);
-
-            androidWindowAd.Call("updatePointAndWidth", (int)windowAdRect.x, (int)windowAdRect.y, (int)windowAdRect.width);
-        }
-
-        public void Hidden()
-        {
-            androidWindowAd.Call("hidden");
-        }
-
-        public void ShowAgainAfterHiding()
-        {
-            androidWindowAd.Call("showAgainAfterHiding");
-        }
-
-        public void SetAngle(int windowAdAngle)
-        {
-
+            androidWindowAd.Call("close");
         }
 
         public void Destroy()
@@ -184,7 +157,7 @@ namespace AtmosplayAds.Android
             }
         }
 
-#endregion
+        #endregion
     }
 }
 

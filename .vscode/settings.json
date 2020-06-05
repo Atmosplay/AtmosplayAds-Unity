@@ -52,5 +52,16 @@
         "ProjectSettings/":true,
         "temp/":true,
         "Temp/":true
+    },
+    "files.associations": {
+        "*.podspec": "ruby",
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "__functional_03": "cpp",
+        "__tree": "cpp",
+        "memory_resource": "cpp",
+        "functional": "cpp",
+        "memory": "cpp"
     }
 }

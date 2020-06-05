@@ -111,14 +111,12 @@ namespace AtmosplayAds.Api
             client.SetChannelId(channelId);
         }
 
-        // Hidden window ad view
-        public void Hidden()
+        // Destroy window ad
+        public void Close()
         {
-            client.Hidden();
-
+            client.Close();
         }
 
-        // Destroy window ad
         public void Destroy()
         {
             client.Destroy();

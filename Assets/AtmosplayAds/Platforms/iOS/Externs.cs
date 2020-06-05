@@ -179,10 +179,11 @@ namespace AtmosplayAds.iOS
         internal static extern void setWindowAdChannelId(IntPtr windowAd, string channelId);
 
         [DllImport("__Internal")]
-        internal static extern void hiddenWindowAd(IntPtr windowAd);
+        internal static extern void closeWindowAd(IntPtr windowAd);
 
         [DllImport("__Internal")]
         internal static extern void destroyWindowAd(IntPtr windowAd);
+        
         #endregion
     }
 }

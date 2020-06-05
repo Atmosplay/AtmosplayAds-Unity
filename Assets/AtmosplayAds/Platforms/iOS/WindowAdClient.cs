@@ -109,9 +109,9 @@ namespace AtmosplayAds.iOS
             Externs.setWindowAdChannelId(windowAdPtr, channelId);
         }
 
-        public void Hidden()
+        public void Close()
         {
-            Externs.hiddenWindowAd(windowAdPtr);
+            Externs.closeWindowAd(windowAdPtr);
         }
 
         public void Destroy()

@@ -39,7 +39,7 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
         statusText.text = "showWindowAd";
         // angle
         int angleNumber = 0;
-        if (angle.text != null)
+        if (angle.text != null && angle.text.Length > 0)
         {
             angleNumber = int.Parse(angle.text);
         }
@@ -47,23 +47,25 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
         float x = 0;
         float y = 0;
         float w = 0;
-        if (pointX.text != null)
+        if (pointX.text != null && pointX.text.Length > 0)
         {
             x = float.Parse(pointX.text);
         }
 
-        if (pointY.text != null)
+        if (pointY.text != null && pointY.text.Length > 0)
         {
             y = float.Parse(pointY.text);
         }
 
-        if (width.text != null)
+        if (width.text != null && width.text.Length > 0)
         {
             w = float.Parse(width.text);
         }
 
+        if (x > 0 && y > 0 && w > 0) { 
         windowAdView.transform.position = new Vector3(x, y, 200);
         windowAdView.GetComponent<RectTransform>().sizeDelta = new Vector2(w, w);
+        }
 
         if (windowAd != null)
         {
@@ -80,24 +82,23 @@ public class AtmosplayWindowAdSceneScript : MonoBehaviour
         }
     }
 
-    public void hidden()
+    public void Close()
     {
-        statusText.text = "hidden";
         if (windowAd != null)
         {
-            windowAd.Hidden();
+            windowAd.Close();
         }
     }
 
-    public void Destroy()
+    public void Back()
     {
         if (windowAd != null)
         {
+            windowAd.Close();
             windowAd.Destroy();
         }
         SceneManager.LoadScene("MainScene");
     }
-
 
     #region WindowAd callback handlers
     public void HandleWindowAdLoaded(object sender, EventArgs args)
