@@ -9,9 +9,6 @@
 
   <iosPods>
     <iosPod name="AtmosplayAds" version="~> 3.2.1">
-    <sources>
-        <source>https://github.com/yumimobi/Specs.git</source>
-    </sources>
     </iosPod>
   </iosPods>
 </dependencies>
