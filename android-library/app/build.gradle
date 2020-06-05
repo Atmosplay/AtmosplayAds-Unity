@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.atmosplayads:atmosplayads:3.2.0-alpha2'
+    implementation 'com.atmosplayads:atmosplayads:3.2.1-alpha0'
 }
 
 task clearJar(type: Delete) {
